@@ -1,0 +1,31 @@
+---- commands Æ¥Åä (31 ÔÚ 1 ÎÄ¼þ ) ----
+MQTTAsync.c:static List* commands = NULL;
+MQTTAsync.c:		commands = ListInitialize();
+MQTTAsync.c:		while (ListNextElement(commands, &elem))
+MQTTAsync.c:		ListFree(commands);
+MQTTAsync.c:					MQTTPersistence_insertInOrder(commands, cmd, sizeof(MQTTAsync_queuedCommand));
+MQTTAsync.c:	Log(TRACE_MINIMUM, -1, "%d commands restored for client %s", commands_restored, c->clientID);
+MQTTAsync.c:		if (commands->first)
+MQTTAsync.c:			head = (MQTTAsync_queuedCommand*)(commands->first->content);
+MQTTAsync.c:			ListInsert(commands, command, command_size, commands->first); /* add to the head of the list */
+MQTTAsync.c:		ListAppend(commands, command, command_size);
+MQTTAsync.c:	   a command for a client, we must skip all following commands for that client.  Use a list of 
+MQTTAsync.c:	while (ListNextElement(commands, &cur_command))
+MQTTAsync.c:		ListDetach(commands, command);
+MQTTAsync.c:		while (commands->count > 0)
+MQTTAsync.c:				break;  /* no commands were processed, so go into a wait */
+MQTTAsync.c:	/* remove commands in the command queue relating to this client */
+MQTTAsync.c:	current = ListNextElement(commands, &next);
+MQTTAsync.c:	ListNextElement(commands, &next);
+MQTTAsync.c:			ListDetach(commands, command);
+MQTTAsync.c:		ListNextElement(commands, &next);
+MQTTAsync.c:	Log(TRACE_MINIMUM, -1, "%d commands removed for client %s", count, m->c->clientID);
+MQTTAsync.c:	/* need to check: commands list and response list for a client */
+MQTTAsync.c:	while (ListFindItem(commands, &msgid, cmdMessageIDCompare) ||
+MQTTAsync.c:	while (ListNextElement(commands, &current))
+MQTTAsync.c:	/* calculate the number of pending tokens - commands plus inflight */
+MQTTAsync.c:	while (ListNextElement(commands, &current))
+MQTTAsync.c:	/* First add the unprocessed commands to the pending tokens */
+MQTTAsync.c:	while (ListNextElement(commands, &current))
+MQTTAsync.c:	/* First check unprocessed commands */
+MQTTAsync.c:	while (ListNextElement(commands, &current))
